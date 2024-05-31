@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -31,9 +31,39 @@
         const basuras = document.querySelectorAll('.basura');
 
         basuras.forEach(basura => {
-            basura.addEventListener('dragstart', dragStart);
-            basura.addEventListener('dragend', dragEnd);
+            basura.addEventListener('touchstart', (e) => {
+                e.target.style.opacity = '0.5';
+                e.target.classList.add('dragging');
+            });
+
+            basura.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                const touch = e.touches[0];
+                e.target.style.top = touch.clientY + 'px';
+                e.target.style.left = touch.clientX + 'px';
+            });
+
+            basura.addEventListener('touchend', (e) => {
+                e.target.style.opacity = '1';
+                e.target.classList.remove('dragging');
+                const caneca = document.elementFromPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+                if (caneca && caneca.classList.contains('caneca')) {
+                    caneca.appendChild(e.target);
+                }
+            });
         });
+
+        function touchStart(e) {
+            e.target.style.opacity = '0.5';
+        }
+
+        function touchMove(e) {
+            e.preventDefault();
+        }
+
+        function touchEnd(e) {
+            e.target.style.opacity = '1';
+        }
 
         function dragStart(e) {
             e.dataTransfer.setData('text/plain', e.target.id);
@@ -47,6 +77,8 @@
         canecas.forEach(caneca => {
             caneca.addEventListener('dragover', dragOver);
             caneca.addEventListener('drop', drop);
+            caneca.addEventListener('touchenter', touchEnter);
+            caneca.addEventListener('touchleave', touchLeave);
         });
 
         function dragOver(e) {
@@ -57,6 +89,14 @@
             const idBasura = e.dataTransfer.getData('text/plain');
             const basura = document.getElementById(idBasura);
             e.target.appendChild(basura);
+        }
+
+        function touchEnter(e) {
+            e.target.style.border = '1px solid #ccc';
+        }
+
+        function touchLeave(e) {
+            e.target.style.border = 'none';
         }
     </script>
 </body>
