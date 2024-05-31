@@ -1,6 +1,6 @@
 body {
     display: flex;
-    flex-direction: column; /* Agregamos esta propiedad */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -12,41 +12,46 @@ body {
 
 #contenedor {
     display: flex;
-    justify-content: space-around;
-    width: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; /* Cambiamos a 100% para que se ajuste a la pantalla */
 }
 
 .caneca {
-    width: 250px;
-    height: 250px;
+    width: calc(20vw - 20px); /* Utilizamos unidades de medida relativas (vw) y calculamos el ancho */
+    height: calc(20vw - 20px); /* Utilizamos unidades de medida relativas (vw) y calculamos el alto */
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
 }
 
 #cancaVerde {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\verde.png');
+    background-size: cover;
 }
 
 #cancaBlanca {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\blanca.png');
+    background-size: cover;
 }
 
 #cancaNegra {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\negra.png');
+    background-size: cover;
 }
 
 #basuras {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 80%;
-    margin-bottom: 20px; /* Agregamos un margen inferior para separar las basuras de las canecas */
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .basura {
-    width: 50px;
-    height: 50px;
+    width: calc(10vw - 10px); /* Utilizamos unidades de medida relativas (vw) y calculamos el ancho */
+    height: calc(10vw - 10px); /* Utilizamos unidades de medida relativas (vw) y calculamos el alto */
     cursor: pointer;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -55,40 +60,50 @@ body {
 
 #bolapapel {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\bolapapel.png');
+    background-size: cover;
 }
 
 #botellaplastico {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\botellaplastico.png');
+    background-size: cover;
 }
 
 #botellavidrio {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\botellavidrio.png');
+    background-size: cover;
 }
 
 #carton {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\carton.png');
+    background-size: cover;
 }
 
 #lata {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\lata.png');
+    background-size: cover;
 }
 
 #manzana {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\manzana.png');
+    background-size: cover;
 }
 
 #restoscomida {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\restoscomida.png');
+    background-size: cover;
 }
 
 #servilleta {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\servilleta.png');
+    background-size: cover;
 }
 
 #desechos {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\desechos.png');
+    background-size: cover;
 }
 
 #metalicos {
     background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\metalicos.png');
+    background-size: cover;
 }
