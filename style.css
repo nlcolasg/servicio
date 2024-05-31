@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    flex-direction: column; /* Agregamos esta propiedad */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contenedor {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.caneca {
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#cancaVerde {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\verde.png');
+}
+
+#cancaBlanca {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\blanca.png');
+}
+
+#cancaNegra {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\negra.png');
+}
+
+#basuras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 20px; /* Agregamos un margen inferior para separar las basuras de las canecas */
+}
+
+.basura {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+#bolapapel {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\bolapapel.png');
+}
+
+#botellaplastico {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\botellaplastico.png');
+}
+
+#botellavidrio {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\botellavidrio.png');
+}
+
+#carton {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\carton.png');
+}
+
+#lata {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\lata.png');
+}
+
+#manzana {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\manzana.png');
+}
+
+#restoscomida {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\restoscomida.png');
+}
+
+#servilleta {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\servilleta.png');
+}
+
+#desechos {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\desechos.png');
+}
+
+#metalicos {
+    background-image: url('C:\Users\nicol\Desktop\JUEGO\imagenes\metalicos.png');
+}

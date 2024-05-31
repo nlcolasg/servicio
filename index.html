@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Reciclaje</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="basuras">
+        <img class="basura" id="bolapapel" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\bolapapel.png">
+        <img class="basura" id="botellaplastico" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\botellaplastico.png">
+        <img class="basura" id="botellavidrio" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\botellavidrio.png">
+        <img class="basura" id="carton" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\carton.png">
+        <img class="basura" id="lata" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\lata.png">
+        <img class="basura" id="manzana" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\manzana.png">
+        <img class="basura" id="restoscomida" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\restoscomida.png">
+        <img class="basura" id="servilleta" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\servilleta.png">
+        <img class="basura" id="desechos" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\desechos.png">
+        <img class="basura" id="metalicos" draggable="true" src="C:\Users\nicol\Desktop\JUEGO\imagenes\metalicos.png">
+    </div>
+    <br>
+    <div id="contenedor">
+        <img id="cancaVerde" class="caneca" src="C:\Users\nicol\Desktop\JUEGO\imagenes\verde.png" draggable="false">
+        <img id="cancaBlanca" class="caneca" src="C:\Users\nicol\Desktop\JUEGO\imagenes\blanca.png" draggable="false">
+        <img id="cancaNegra" class="caneca" src="C:\Users\nicol\Desktop\JUEGO\imagenes\negra.png" draggable="false">
+    </div>
+
+    <script>
+        const canecas = document.querySelectorAll('.caneca');
+        const basuras = document.querySelectorAll('.basura');
+
+        basuras.forEach(basura => {
+            basura.addEventListener('dragstart', dragStart);
+            basura.addEventListener('dragend', dragEnd);
+        });
+
+        function dragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.id);
+            e.target.style.opacity = '0.5';
+        }
+
+        function dragEnd(e) {
+            e.target.style.opacity = '1';
+        }
+
+        canecas.forEach(caneca => {
+            caneca.addEventListener('dragover', dragOver);
+            caneca.addEventListener('drop', drop);
+        });
+
+        function dragOver(e) {
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            const idBasura = e.dataTransfer.getData('text/plain');
+            const basura = document.getElementById(idBasura);
+            e.target.appendChild(basura);
+        }
+    </script>
+</body>
+</html>
